@@ -26,7 +26,7 @@ def current_date():
 
 
 def current_time():
-    return (datetime.utcnow() + timedelta(hours=-4)).strftime("%H:%M:%S")
+    return datetime.utcnow().isoformat() + "Z"
 
 
 # def get_current_users():
