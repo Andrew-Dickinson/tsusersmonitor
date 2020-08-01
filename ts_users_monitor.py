@@ -133,6 +133,7 @@ def register_user(user_id, name):
 def connection_tracking_bot(ts3conn):
     # Register for the event.
     ts3conn.exec_("servernotifyregister", event="server")
+    print("Listening for events...")
 
     while True:
         ts3conn.send_keepalive()
