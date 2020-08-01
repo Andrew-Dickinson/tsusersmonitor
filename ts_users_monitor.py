@@ -146,7 +146,7 @@ def connection_tracking_bot(ts3conn):
         except ts3.query.TS3TimeoutError:
             pass
         else:
-            if event[0]["reasonid"] == "0":
+            if event[0]["reasonid"] == "0" and event[0]['client_type'] != '1':
                 # Entered
                 known_clients[event[0]['clid']] = {'dbid': event[0]['client_database_id'], 'name': event[0]['client_nickname']}
                 register_user(known_clients[event[0]['clid']]['dbid'], known_clients[event[0]['clid']]['name'])
